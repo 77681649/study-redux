@@ -14,6 +14,8 @@ class LoginButtonBox extends Component {
     }
 
     render() {
+        console.log('render LoginButtonBox')
+
         return (
             <div>
                 <button onClick={this.onClickSignIn.bind(this)}>Sign In</button>

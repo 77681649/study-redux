@@ -1,20 +1,18 @@
 
-import {loginConstants} from '../constants'
+import {listConstants} from '../constants'
 
 const initialState = {
-    username: '',
-    password: ''
+    data:[]
 }
 
 export default function (state = initialState, action) {
     console.debug('dispatch %j', action)
 
     switch (action.type) {
-        case loginConstants.LOGIN_SIGN_IN:
+        case listConstants.LIST_FETCH:
             return {
                 ...state,
-                username: action.username,
-                password: action.password
+                data : action.data
             }
 
         default:

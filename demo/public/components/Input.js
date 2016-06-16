@@ -19,6 +19,8 @@ const Input = React.createClass({
     },
 
     render: function () {
+        console.log('render Input')
+
         const props = this.props
 
         return (

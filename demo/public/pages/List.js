@@ -1,10 +1,15 @@
 
 import React, {Component} from 'react'
 
+import BookList from '../components/BookList'
+
 class List extends Component {
     render() {
         return (
-            <h1>List</h1>
+            <section>
+                <h1>Book List</h1>
+                <BookList />
+            </section>
         )
     }
 }

@@ -13,23 +13,14 @@ const store = configureStore({
     login: {}
 })
 
-class App extends Component {
-
-    render() {
-        return (
-            <Provider store={store}>
-                <Pages.Home />
-            </Provider>
-        )
-    }
-}
-
 render(
-    <Router history={browserHistory}>
-        <Route path='/' component={App} />
-        <Route path='list' component={Pages.List} />
-        <Route path='detail' component={Pages.Detail} />
-        <Route path='*' component={Pages.NotFound} />
-    </Router>,
+    <Provider store={store} key="provider">
+        <Router history={browserHistory}>
+            <Route path='/' component={Pages.Home} />
+            <Route path='list' component={Pages.List} />
+            <Route path='detail/:id' component={Pages.Detail} />
+            <Route path='*' component={Pages.NotFound} />
+        </Router>
+    </Provider>,
     document.getElementById('root')
 )

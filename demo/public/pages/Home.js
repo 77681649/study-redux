@@ -1,23 +1,22 @@
 
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
+import React, {Component, PropTypes} from 'react'
 
 import LoginBox from '../components/LoginBox'
 
 class Home extends Component {
 
-    constructor(props) {
-        super(props)
+    goList(){
+        this.props.history.pushState(null, '/list');
     }
 
     render() {
         return (
             <section>
-            <h1>Home</h1>
-                <LoginBox />
+                <h1>Home</h1>
+                <LoginBox goList={()=>this.goList()} />
             </section>
         )
     }
 }
 
-export default connect()(Home)
+export default Home
