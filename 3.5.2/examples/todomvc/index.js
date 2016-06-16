@@ -9,8 +9,10 @@ import 'todomvc-app-css/index.css'
 const store = configureStore()
 
 render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <Route handler={App}>
+    <Route path="/" component={Index}/>
+    <Route path="list" component={List}/>
+    <Route path="detail" component={Detail}/>
+  </Route>,
   document.getElementById('root')
 )
