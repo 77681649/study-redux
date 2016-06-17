@@ -24,7 +24,7 @@ const Input = React.createClass({
         const props = this.props
 
         return (
-            <div>
+            <div class="input">
                 <label htmlFor={props.id}>{props.name}</label>
                 <input id={props.id} type="text" value={this.state.value} onChange={this.change } />
             </div>

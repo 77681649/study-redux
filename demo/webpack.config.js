@@ -36,8 +36,13 @@ const config = {
                 include: __dirname
             },
             {
+                test: /\.less$/,
+                loaders: ['style', 'css', 'less'],
+                include: __dirname
+            },
+            {
                 test: /\.css?$/,
-                loaders: ['style', 'raw'],
+                loaders: ['style', 'css'],
                 include: __dirname
             }
         ]
@@ -51,17 +56,17 @@ const config = {
 console.log(env);
 
 if (env === 'production') {
-  config.plugins.push(
-    new webpack.optimize.UglifyJsPlugin({
-      compressor: {
-        pure_getters: true,
-        unsafe: true,
-        unsafe_comps: true,
-        screw_ie8: true,
-        warnings: false
-      }
-    })
-  )
+    config.plugins.push(
+        new webpack.optimize.UglifyJsPlugin({
+            compressor: {
+                pure_getters: true,
+                unsafe: true,
+                unsafe_comps: true,
+                screw_ie8: true,
+                warnings: false
+            }
+        })
+    )
 }
 
 module.exports = config

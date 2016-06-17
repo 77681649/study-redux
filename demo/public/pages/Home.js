@@ -2,6 +2,7 @@
 import React, {Component, PropTypes} from 'react'
 
 import LoginBox from '../components/LoginBox'
+import Header from '../components/Header'
 
 class Home extends Component {
 
@@ -12,7 +13,7 @@ class Home extends Component {
     render() {
         return (
             <section>
-                <h1>Home</h1>
+                <Header title='Home' />
                 <LoginBox goList={()=>this.goList()} />
             </section>
         )

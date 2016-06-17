@@ -1,8 +1,14 @@
 
 
-**express** Web服务器框架
 
-**react** 
+## 相关插件
+
+**express** 
+Web服务器框架
+
+**react**
+
+ 
 **react-dom**
 **react-redux** 
 **react-router**
@@ -16,6 +22,9 @@
 **webpack-hot-middleware**
 
 **babel-loader** webpack babel loader
+**less-loader**
+**css-loader**
+**style-loader**
 
 **babel-core**                           
 **babel-preset-es2015** es6 --> es5

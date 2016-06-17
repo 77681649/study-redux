@@ -9,6 +9,9 @@ import * as Pages from './pages'
 import { Provider } from 'react-redux'
 import configureStore from './store/configureStore'
 
+require('./style/normalize.css')
+require('./style/Index.less')
+
 const store = configureStore({
     login: {}
 })
