@@ -22,6 +22,11 @@ render(
             <Route path='/' component={Pages.Home} />
             <Route path='list' component={Pages.List} />
             <Route path='detail/:id' component={Pages.Detail} />
+
+            <Route path="demo">
+                <Route path="demo1" component={Pages.Demo.Demo1} />
+            </Route>
+
             <Route path='*' component={Pages.NotFound} />
         </Router>
     </Provider>,

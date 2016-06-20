@@ -22,8 +22,11 @@ app.get("/detail/:id", function (req, res) {
   res.sendFile(__dirname + '/public/index.html')
 })
 
-app.get("/list/books", function (req, res) {
+app.get("/demo/demo1", function (req, res) {
+  res.sendFile(__dirname + '/public/index.html')
+})
 
+app.get("/list/books", function (req, res) {
   setTimeout(() =>
     res.json({
       head: {
@@ -40,9 +43,61 @@ app.get("/list/books", function (req, res) {
         { id: 7, name: 'Redux-Thunk', description: 'Redux-Thunk Redux异步中间件' }
       ]
     })
-    , 8000)
-
+    , 3000)
 })
+
+
+
+app.get("/group/list/:date", function (req, res) {
+  setTimeout(() =>
+    res.json({
+      head: {
+        errcode: 0,
+        errmessage: ''
+      },
+      data: [
+        { id: 1, name: 'DH-123' },
+        { id: 2, name: 'DH-124' }
+      ]
+    })
+    , 3000)
+})
+
+app.get("/group/flight-list/:id", function (req, res) {
+
+  setTimeout(() =>
+    res.json({
+      head: {
+        errcode: 0,
+        errmessage: ''
+      },
+      data: [
+        { id: 1, name: 'HKG-TPE 10:20', groupId: 1, },
+        { id: 2, name: 'HKG-TPE 13:40', groupId: 1, },
+        { id: 3, name: '香港-台北 10:20', groupId: 2, },
+        { id: 4, name: '香港-台北 13:40', groupId: 2, },
+      ].filter(it => it.groupId == req.params.id)
+    })
+    , 1000)
+})
+
+app.get("/group/discount-list/:id", function (req, res) {
+  setTimeout(() =>
+    res.json({
+      head: {
+        errcode: 0,
+        errmessage: ''
+      },
+      data: [
+        { id: 1, name: '限额优惠 HKG200', groupId: 1 },
+        { id: 2, name: '银行优惠 HGG100', groupId: 1 },
+        { id: 3, name: '>>限额优惠 HKG1,200', groupId: 2 },
+        { id: 4, name: '>>银行优惠 HGG1,100', groupId: 2 }
+      ].filter(it => it.groupId == req.params.id)
+    })
+    , 5000)
+})
+
 
 app.listen(port, function (error) {
   if (error) {
