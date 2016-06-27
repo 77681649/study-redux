@@ -30,6 +30,11 @@ export default class Provider extends Component {
   
   /**
    * 返回给子组建的Context , 子组件通过context访问父组件的Context
+   * 
+   * 子组件要使用context时 ， 必须做如下步骤 ： 
+   *  1. 设置contextTypes
+   *  2. 访问this.context
+   * 
    * @returns {Object}
    */
   getChildContext() {
@@ -61,7 +66,10 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 Provider.propTypes = {
+  // 容器
   store: storeShape.isRequired,
+  
+  // 子组件
   children: PropTypes.element.isRequired
 }
 
