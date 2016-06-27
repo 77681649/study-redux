@@ -16,7 +16,8 @@ const store = configureStore({
     login: {}
 })
 
-render(
+
+const element = render(
     <Provider store={store} key="provider">
         <Router history={browserHistory}>
             <Route path='/' component={Pages.Home} />
@@ -32,3 +33,9 @@ render(
     </Provider>,
     document.getElementById('root')
 )
+
+window.React = React;
+
+console.log('React:' , React);
+console.log('Provider:' , Provider);
+console.log('element:' , element);
