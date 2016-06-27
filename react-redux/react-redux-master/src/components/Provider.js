@@ -2,7 +2,11 @@ import { Component, PropTypes, Children } from 'react'
 import storeShape from '../utils/storeShape'
 import warning from '../utils/warning'
 
+/**
+ * 
+ */
 let didWarnAboutReceivingStore = false
+
 function warnAboutReceivingStore() {
   if (didWarnAboutReceivingStore) {
     return
@@ -18,17 +22,29 @@ function warnAboutReceivingStore() {
   )
 }
 
+/**
+ * React Provider
+ * 用于存储Store , 
+ */
 export default class Provider extends Component {
+  
+  /**
+   * 返回给子组建的Context , 子组件通过context访问父组件的Context
+   * @returns {Object}
+   */
   getChildContext() {
     return { store: this.store }
   }
 
   constructor(props, context) {
     super(props, context)
+    
+    // store 通过Provider组件的属性设置
     this.store = props.store
   }
 
   render() {
+    // 
     return Children.only(this.props.children)
   }
 }
@@ -48,6 +64,10 @@ Provider.propTypes = {
   store: storeShape.isRequired,
   children: PropTypes.element.isRequired
 }
+
+/**
+ * 定义getChildContext返回对象的类型
+ */
 Provider.childContextTypes = {
   store: storeShape.isRequired
 }
