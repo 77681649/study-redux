@@ -1,3 +1,10 @@
+
+/**
+ * 浅比较 - 只比较对象的第一层属性
+ * @param {Object} objA
+ * @param {Object} objB
+ * @returns {Boolean}
+ */
 export default function shallowEqual(objA, objB) {
   if (objA === objB) {
     return true
